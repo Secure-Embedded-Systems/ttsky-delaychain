@@ -17,15 +17,7 @@ module tt_um_delaychain (
 			 );
    
    assign uio_oe = 8'b0; // use uio as input
-   
    wire _unused = &{ena, 1'b0};
-   
-   
-   
-   // All output pins must be assigned. If not used, assign to 0.
-   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-   assign uio_out = 0;
-   assign uio_oe  = 0;
 
    wire [7:0] c1q, c2q, c5q, c10q, c20q, c50q, c100q, c200q, c500q;
    
