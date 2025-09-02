@@ -31,7 +31,7 @@ module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs
       for (i = 0; i < 2*P; i = i + 1) begin : inv_pair
          // Add synthesis directive to prevent optimization
          (* keep = "true", dont_touch = "true" *)
-         not #1 inv_gate (inv_chain[i+1], inv_chain[i]);
+         not inv_gate (inv_chain[i+1], inv_chain[i]);
       end
    endgenerate
    
