@@ -30,7 +30,7 @@ module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs
    generate
       for (i = 0; i < 2*P; i = i + 1) begin : inv_pair
          // Add synthesis directive to prevent optimization
-         (* keep = "true" *) cinv inv_gate (inv_chain[i+1], inv_chain[i]);
+         (* keep = "true" *) cinv inv_gate (.q(inv_chain[i+1]), .a(inv_chain[i]));
       end
    endgenerate
    
