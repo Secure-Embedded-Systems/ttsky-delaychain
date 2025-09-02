@@ -20,7 +20,7 @@ module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs
    
    // Generate even number  of inverters (2*P inverters total)
    // Each pair of inverters should not be optimized away
-   wire [2*P:0] inv_chain;
+   (* keep = "true" *) wire [2*P:0] inv_chain;
    
    // Connect first inverter to flip-flop output
    assign inv_chain[0] = ff_input;
@@ -30,8 +30,7 @@ module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs
    generate
       for (i = 0; i < 2*P; i = i + 1) begin : inv_pair
          // Add synthesis directive to prevent optimization
-         (* keep = "true", dont_touch = "true" *)
-         not inv_gate (inv_chain[i+1], inv_chain[i]);
+         (* keep = "true" *) cinv inv_gate (inv_chain[i+1], inv_chain[i]);
       end
    endgenerate
    
