@@ -20,7 +20,7 @@ module tt_um_delaychain (
    wire _unused = &{ena, 1'b0};
 
    testchain #(.P(1))   chain1  (.clk(clk), .rst_n(rst_n), .din(ui_in[0]), .test(uio_in[0]), .dout(uo_out[0]));
-   assign uo_out[7:1] = uo_in[7:1];
+   assign uo_out[7:1] = ui_in[7:1];
       
 //   wire [7:0] c1q, c2q, c5q, c10q, c20q, c50q, c100q, c200q, c500q;
    
