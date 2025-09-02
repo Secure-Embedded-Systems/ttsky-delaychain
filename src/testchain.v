@@ -1,6 +1,7 @@
 module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs = 4 inverters)
 		   ) (
 		      input wire  clk,
+		      input wire  rst_n,
 		      input wire  din,
 		      input wire  test,
 		      output wire dout
