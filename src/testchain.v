@@ -17,7 +17,7 @@ module testchain #(parameter P = 2 // Number of inverter pairs (default: 2 pairs
 	ff_input <= din;
    end
    
-   // Generate even number of inverters (2*P inverters total)
+   // Generate even number  of inverters (2*P inverters total)
    // Each pair of inverters should not be optimized away
    wire [2*P:0] inv_chain;
    
